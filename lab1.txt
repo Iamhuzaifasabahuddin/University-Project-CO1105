@@ -1,0 +1,105 @@
+Q2
+import java.util.Scanner;
+public class Lab1 {
+    public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+            int num1 = 0, num2 = 0, k;
+            System.out.println("Enter First Number: ");
+            num1 = input.nextDouble() // would be nextInt
+            System.out.printf("Enter Second Number: )";
+            num2 = input.nextInt();
+            k == num2 % num1; //would be k =
+            if (k = 0) // would be k == 0
+                System.out.println(num1+"is a multiple of + num2");
+            }else {
+                System.out.println(num1+"is not a multiple of "+ num2);
+        }
+    }
+}
+
+
+corrected
+import java.util.Scanner;
+public class Lab1 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int num1 = 0, num2 = 0, k;
+        System.out.println("Enter First Number: ");
+        num1 = input.nextInt();// would be nextInt
+        System.out.printf("Enter Second Number: ");
+        num2 = input.nextInt();
+        k = num2 % num1; //would be k =
+        if (k == 0) {// would be k == 0
+            System.out.println(num1+"is a multiple of + num2");
+        }
+        else {
+        System.out.println(num1+"is not a multiple of "+ num2);
+    }
+}
+}
+
+
+
+Q3
+public class Lab1 {
+    public static void main(String[] args) {
+        int a = 5, b = 3,r1;
+        r1 = a / b;
+        System.out.println("result is " + r1);
+    }
+
+}
+
+
+
+//b
+public class Lab1{
+    public static void main(String[] args){
+        char c = 'a'; int s = 5000; int r2;
+        r2 = c * s;
+        System.out.println(r2);
+
+    }
+}
+
+
+//c
+public class Lab1{
+    public static void main(String[] args){
+        char c = 'a'; int s = 5000; int r2;  int r4;int a = 5, b = 3,r1; int r3 = 0;
+        r2 = c * s;
+        System.out.println(r2);
+        r1 = a / b;
+        System.out.println("result is " + r1);
+        r4 = r1-r2-r3;
+        System.out.println(r4);
+
+    }
+}
+
+
+
+Q4
+    
+import java.util.Scanner;
+public class Lab1 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter first number:");
+        int num1 = input.nextInt();
+        System.out.println("Enter second number:");
+        int num2 = input.nextInt();
+        if (num1 > num2) {
+            System.out.println(num1 + " is greater than " + num2);
+
+        } else if (num1 < num2) {
+            System.out.println(num1 + "is less than " + num2);
+
+
+        } else {
+            System.out.println("Both numbers are equal");
+        }
+
+    }
+}
+
