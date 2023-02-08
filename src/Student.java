@@ -2,7 +2,7 @@ import java.util.Arrays;
 public class Student {
     private int id;
     private String firstName;
-    private String surname;
+    private String lastName;
     private int[] homeworkMarks = new int[5];
     private int interimTestMark;
     private double courseworkMark;
@@ -13,64 +13,68 @@ public class Student {
         this.id = id;
     }
 
-    public void setName(String firstName, String surname) {
+    public int getId() {
+        return id;
+    }
 
+    public void setName(String firstName, String lastName) {
         this.firstName = firstName;
-        this.surname = surname;
+        this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     public void setHomeworkMarks(int[] homeworkMarks) {
         this.homeworkMarks = homeworkMarks;
     }
 
+    public int[] getHomeworkMarks() {
+        return homeworkMarks;
+    }
+
     public void setInterimTestMark(int interimTestMark) {
         this.interimTestMark = interimTestMark;
-    }
-
-    public void setExamMark(int examMark) {
-        this.examMark = examMark;
-    }
-
-    public void calculateCourseworkMark() {
-        Arrays.sort(homeworkMarks);
-        double sum = 0;
-        for (int i = 2; i >=0; i--) {
-            sum += i;
-        }
-        this.courseworkMark =(sum/3) + interimTestMark;
-    }
-
-    public void calculateFinalMark() {
-        this.finalMark = 0.3*courseworkMark + 0.7 * examMark;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public double getFinalMark() {
-        return  finalMark;
-    }
-
-    public double getCourseworkMark() {
-        return courseworkMark;
-    }
-    public double getExamMark() {
-        return examMark;
-    }
-
-    public String getName() {
-        return firstName + "\t\t" + surname;
     }
 
     public int getInterimTestMark() {
         return interimTestMark;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public void setExamMark(int examMark) {
+        this.examMark = examMark;
     }
-    public String getLastName() {
-        return surname;
+
+    public int getExamMark() {
+        return examMark;
+    }
+
+    public double getCourseworkMark() {
+        return courseworkMark;
+    }
+
+    public double getFinalMark() {
+        return finalMark;
+    }
+
+    public void calculateCourseworkMark() {
+        Arrays.sort(homeworkMarks);
+        double sum = 0;
+        for (int i = 4; i >= 0; i--) {
+            if (i < 2) {
+                break;
+            }
+            sum += homeworkMarks[i];
+        }
+        courseworkMark = (0.10 * sum) + (0.20 * interimTestMark);
+    }
+
+    public void calculateFinalMark() {
+        finalMark = 0.70 * examMark + 0.30 * courseworkMark;
     }
 }

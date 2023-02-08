@@ -52,12 +52,12 @@ public class XX007 {
                     i--;
                 }
             }
-            System.out.println("ID\tName\tSurname\tCoursework\tExam\tFinalMark");
+            System.out.println("ID\tName\tSurname\t Coursework\tExam\tFinalMark");
             for (int i = 0; i < numOfStudents; i++) {
                 System.out.println(students[i].getId() + "\t" +
-                        students[i].getFirstName() + "\t " + students[i].getLastName() + "\t " +
-                        students[i].getCourseworkMark() + "%\t\t" +
-                        students[i].getExamMark() + "%\t " + students[i].getFinalMark() + "%");
+                        students[i].getFirstName() + "\t " + students[i].getLastName() + "\t  "  +
+                        Math.round(students[i].getCourseworkMark()) + "%\t\t "  +
+                        Math.round(students[i].getExamMark()) + "%\t  " +  Math.round(students[i].getFinalMark()) + "%");
 
             }
 
