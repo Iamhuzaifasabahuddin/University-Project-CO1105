@@ -1,0 +1,178 @@
+Q2
+class Lab2 {
+    public static void main(String[] args) {
+        int count = 0;
+        int sum = 0;
+        while (true) {
+            if (sum % 2 == 0) {
+                count++;
+                System.out.println(sum);
+            }
+            sum++;
+            if (count == 5) {
+                break;
+            }
+        }
+    }
+}
+
+Q3 
+i) 
+import java.util.Scanner;
+public class Lab2 {
+    public static void main(String[] args) {
+        int table,range;
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter a number whose table you want: ");
+        table = input.nextInt();
+        System.out.println("Enter a range till you want the table: ");
+        range = input.nextInt();
+        for (int i = 1; i <=range ; ++i) {
+            System.out.println(table + " * " + i + " = " + table * i + " " );
+            }
+            System.out.println(" ");
+        }
+    }
+
+
+
+ii)
+import java.util.*;
+
+public class Lab2 {
+
+    public static void main(String[] args)
+    {
+        int rows, i, j;
+
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter no of rows: ");
+        rows = in.nextInt();
+
+       
+
+        for (i = 1; i <= rows-1; i++) {
+            for (j = 1; j <= i; j++) {
+                System.out.print(i + " * " + j + " = " + i * j + "  ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+Q4
+import java.util.Scanner;
+public class Lab2 {
+    public static void main(String[] args) {
+        Scanner SN = new Scanner(System.in);
+        int month = 0;
+        int days;
+        int Year;
+        System.out.printf("Enter month number: ");
+        month = SN.nextInt();
+        switch (month) {
+            /* fill in every cases below */
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                days = 31;
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                days = 30;
+                break;
+            case 2:
+                System.out.println("Enter year: ");
+                Year = SN.nextInt();
+                if ((Year % 4 == 0 && Year % 100 != 0) || (Year % 400 == 0)){
+                    days = 29;
+                }
+                else {
+                    days = 28;
+                }
+                break;
+            default:
+                days = 0;
+                System.out.println("error!!!");
+                break;
+        }
+        if (days != 0)
+            System.out.println("Number of days in month " + month + " is: " + days);
+        else
+            System.out.println("You have entered an invalid month!!!");
+    }
+}
+
+
+Q5
+public class Lab2 {
+    public static void main(String[] args) {
+        int[] array1 = {1, 2, 3, 4, 5};
+        int[] array2 = new int[5];
+        array2[0] = 6;
+        array2[1] = 7;
+        array2[2] = 8;
+        array2[3] = 9;
+        array2[4] = 10;
+
+        System.out.println("Array 1: ");
+        for (int i = 0; i < array1.length; i++) {
+            System.out.print(array1[i] + " ");
+        }
+
+        System.out.println("\nArray 2: ");
+        for (int e : array2) {
+            System.out.print(e + " ");
+        }
+    }
+}
+
+Q6
+import java.util.Scanner;
+import java.util.Arrays;
+public class Lab2 {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        //allow user  input;
+        System.out.println("How many numbers do you want to enter?");
+        int val = input.nextInt();
+        System.out.println("Enter first "+ val +" numbers of first array");
+
+        int [] array1 = new int[val];
+        int [] array2 = new int[val];
+
+        int sizea = array1.length,sizeb = array2.length;
+        int fin = sizea + sizeb;
+        int [] array3 = new int[fin];
+
+        for (int i = 0 ; i < array1.length; i++ ) {
+            array1[i] = input.nextInt();
+
+        }
+        System.out.println("Enter first " + val +" numbers of the second array");
+
+        for (int j = 0 ; j < array2.length; j++ ) {
+            array2[j] = input.nextInt();
+        }
+        System.arraycopy(array1, 0, array3, 0, sizea);
+        System.arraycopy(array2, 0, array3, sizea, sizeb);
+
+
+        System.out.println("Array 1 has elements: ");
+        System.out.println( Arrays.toString(array1));
+        System.out.println("Array 2 has elements: ");
+        System.out.println( Arrays.toString(array2));
+        for(int i = 0; i < array3.length; i++) {
+            System.out.print(array3[i] + "\t");
+        }
+    }
+}
