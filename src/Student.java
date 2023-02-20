@@ -63,7 +63,9 @@ public class Student {
     }
 
     public void calculateCourseworkMark() {
+        // calculates the coursework marks
         Arrays.sort(homeworkMarks);
+        // sorts the array and intakes the last three values (index 4 to 2)
         double sum = 0;
         for (int i = 4; i >= 0; i--) {
             if (i < 2) {
@@ -75,6 +77,7 @@ public class Student {
     }
 
     public void calculateFinalMark() {
+        // Calculate the final marks
         finalMark = 0.70 * examMark + 0.30 * courseworkMark;
     }
 }
