@@ -1,44 +1,46 @@
-import  java.util.Scanner;
+import java.util.Scanner;
+
 public class Studentmajor {
-    public static void main(String[] args){
-        String subject = null , level = null;
-        Scanner inputScan = new Scanner(System.in);
-        System.out.println("M: Mathematics\nC: Computer Science\nI: Information Technology");
-        System.out.println("Enter subject: ");
-        String subj = inputScan.next().toUpperCase();
-        if(subj.startsWith("M")){
-            subject = "Mathematics";
+    public static void main(String[] args) {
+        // Prompt the user to enter two characters
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter two characters: ");
+        String inputStr = input.nextLine();
+
+        // Extract the major and status from the input
+        char majorChar = inputStr.charAt(0);
+        char statusChar = inputStr.charAt(1);
+
+        // Define a dictionary mapping major characters to their corresponding majors
+        String[] majorArray = {"Mathematics", "Computer Science", "Information Technology"};
+        char[] majorCharArr = {'M', 'C', 'I'};
+
+        // Define a dictionary mapping status characters to their corresponding statuses
+        String[] statusArray = {"Freshman", "Sophomore", "Junior", "Senior"};
+        char[] statusCharArr = {'1', '2', '3', '4'};
+
+        // Look up the major and status from the arrays
+        String major = "";
+        String status = "";
+        for (int i = 0; i < majorCharArr.length; i++) {
+            if (majorChar == majorCharArr[i]) {
+                major = majorArray[i];
+                break;
+            }
         }
-        else if(subj.startsWith("C")){
-            subject = "Computer Science";
-            
-        } else if (subj.startsWith("I")) {
-            subject = "Information Technology";
+        for (int i = 0; i < statusCharArr.length; i++) {
+            if (statusChar == statusCharArr[i]) {
+                status = statusArray[i];
+                break;
+            }
         }
 
-        if (subj.endsWith("1")){
-            level = "Freshman";
-
+        // Display the major and status
+        if (major.equals("") || status.equals("")) {
+            System.out.println("Invalid Input");
+        } else {
+            System.out.println("Major: " + major);
+            System.out.println("Status: " + status);
         }
-        else if (subj.endsWith("2")){
-            level = "sophomore";
-        }
-        else if (subj.endsWith("3")){
-            level = "junior";
-        }
-        else if (subj.endsWith("4")){
-            level = "senior";
-        }
-        if (subject != null && level != null) {
-            System.out.println("Subject details are: ");
-            System.out.println(subject +" "+level);
-        }
-        else {
-            System.out.println("Invalid subject details");
-        }
-
     }
-
-
 }
-
