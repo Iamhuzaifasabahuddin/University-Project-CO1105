@@ -73,7 +73,7 @@ public class Student {
             }
             sum += homeworkMarks[i];
         }
-        courseworkMark = (0.10 * sum) + (0.20 * interimTestMark);
+        courseworkMark = (0.10 * sum)/3 + (0.20 * interimTestMark);
     }
 
     public void calculateFinalMark() {
