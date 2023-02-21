@@ -12,7 +12,7 @@ public class Substring{
         String s2 = input.nextLine().toUpperCase();
 
         // Check whether the second string is a substring of the first string
-        if (s1.indexOf(s2) != -1) {
+        if (s1.contains(s2)) {
             System.out.println(s2 + " is a substring of " + s1);
         } else {
             System.out.println(s2 + " is not a substring of " + s1);
