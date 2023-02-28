@@ -50,11 +50,11 @@ public class Trianglept2 {
     }
     public String toString() {
         if (this.filled) {
-            return "Triangle has sides: " + this.side1 + ", " + this.side2 + ", " + this.side3 + " And has colour " + this.color.toLowerCase() +
-                    " and is filled " + " and has area and perimeter of " + getarea()+ " " +getperimeter();
+            return "Triangle has sides: " + this.side1 + ", " + this.side2 + ", " + this.side3 + "\n And has colour" + this.color.toLowerCase() +
+                    "\n and is filled " + "\n and has area and perimeter of " + getarea()+ " " +getperimeter();
         } else {
-            return "Triangle has sides: " + this.side1 + ", " + this.side2 + ", " + this.side3 + " Colour of " + this.color.toLowerCase() +
-                    " and isnt filled "+" and has area and perimeter of " + getarea() + " " +  getperimeter();
+            return "Triangle has sides: " + this.side1 + ", " + this.side2 + ", " + this.side3 + "\n Colour of " + this.color.toLowerCase() +
+                    "\n and isnt filled "+"\n and has area and perimeter of " + getarea() + " " +  getperimeter();
         }
     }
 }
