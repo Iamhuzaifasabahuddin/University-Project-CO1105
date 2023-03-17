@@ -28,15 +28,11 @@ public abstract class Modulecw2 {
     }
 
     private String getStatusString() {
-        switch (status) {
-            case 0:
-                return "Coursework Only";
-            case 1:
-                return "Exam Only";
-            case 2:
-                return "Coursework and Exam";
-            default:
-                return "Unknown";
-        }
+        return switch (status) {
+            case 0 -> "Coursework Only";
+            case 1 -> "Exam Only";
+            case 2 -> "Coursework and Exam";
+            default -> "Unknown";
+        };
     }
 }
